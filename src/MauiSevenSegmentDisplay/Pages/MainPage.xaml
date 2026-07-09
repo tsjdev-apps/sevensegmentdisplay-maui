@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiSevenSegmentDisplay.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiSevenSegmentDisplay.Controls"
+    xmlns:viewModels="clr-namespace:MauiSevenSegmentDisplay.ViewModels"
+    x:DataType="viewModels:MainViewModel"
+    BackgroundColor="{AppThemeBinding Light=#F5F7FB, Dark=#090B10}"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*">
+        <BoxView
+            Grid.RowSpan="2"
+            BackgroundColor="{AppThemeBinding Light=#F5F7FB, Dark=#090B10}" />
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Padding="28,26,28,10"
+            Spacing="4">
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="SevenSegmentDisplay"
+                TextColor="{AppThemeBinding Light=#111827, Dark=#F5F7FB}" />
+            <Label
+                FontSize="14"
+                Text="Reusable SkiaSharp seven-segment control"
+                TextColor="{AppThemeBinding Light=#5E6878, Dark=#9FA8B8}" />
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1" Orientation="Vertical">
+            <VerticalStackLayout
+                Padding="24"
+                Spacing="18">
+
+                <Border
+                    Padding="22"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#111722}"
+                    Stroke="{AppThemeBinding Light=#DCE3EE, Dark=#263244}"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="16">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Text="Digital Clock"
+                            TextColor="{AppThemeBinding Light=#1F2937, Dark=#DDE5F3}" />
+                        <controls:SevenSegmentDisplay
+                            HeightRequest="132"
+                            AnimationDuration="260"
+                            CharacterSpacing="8"
+                            DisplayBackgroundColor="{AppThemeBinding Light=#08150B, Dark=#050805}"
+                            GlowColor="{AppThemeBinding Light=#21C55D, Dark=#39FF72}"
+                            GlowIntensity="{AppThemeBinding Light=0.48, Dark=0.72}"
+                            InactiveSegmentColor="{AppThemeBinding Light=#2B6640, Dark=#1E5531}"
+                            InactiveSegmentOpacity="{AppThemeBinding Light=0.34, Dark=0.3}"
+                            IsAnimationEnabled="True"
+                            IsGlowEnabled="True"
+                            SegmentColor="{AppThemeBinding Light=#27D86A, Dark=#39FF72}"
+                            SegmentCornerRadius="4"
+                            SegmentThickness="12"
+                            Text="{Binding CurrentTime}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Padding="22"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#111722}"
+                    Stroke="{AppThemeBinding Light=#DCE3EE, Dark=#263244}"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="16">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Countdown"
+                                TextColor="{AppThemeBinding Light=#1F2937, Dark=#DDE5F3}"
+                                VerticalOptions="Center" />
+                            <Button
+                                Grid.Column="1"
+                                Padding="16,8"
+                                BackgroundColor="{AppThemeBinding Light=#2563A8, Dark=#23415F}"
+                                Command="{Binding ResetCountdownCommand}"
+                                CornerRadius="6"
+                                Text="Reset"
+                                TextColor="#FFFFFF" />
+                        </Grid>
+
+                        <controls:SevenSegmentDisplay
+                            HeightRequest="116"
+                            AnimationDuration="240"
+                            CharacterSpacing="8"
+                            DisplayBackgroundColor="{AppThemeBinding Light=#07131D, Dark=#080B12}"
+                            GlowColor="{AppThemeBinding Light=#38BDF8, Dark=#6BD6FF}"
+                            GlowIntensity="{AppThemeBinding Light=0.42, Dark=0.62}"
+                            InactiveSegmentColor="{AppThemeBinding Light=#24556D, Dark=#20465A}"
+                            InactiveSegmentOpacity="{AppThemeBinding Light=0.34, Dark=0.3}"
+                            SegmentColor="{AppThemeBinding Light=#4FC3F7, Dark=#6BD6FF}"
+                            SegmentCornerRadius="4"
+                            SegmentThickness="12"
+                            Text="{Binding CountdownText}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Padding="22"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#111722}"
+                    Stroke="{AppThemeBinding Light=#DCE3EE, Dark=#263244}"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="16">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Status Display"
+                                TextColor="{AppThemeBinding Light=#1F2937, Dark=#DDE5F3}"
+                                VerticalOptions="Center" />
+                            <Button
+                                Grid.Column="1"
+                                Padding="16,8"
+                                BackgroundColor="{AppThemeBinding Light=#BE3344, Dark=#5A3238}"
+                                Command="{Binding NextStatusCommand}"
+                                CornerRadius="6"
+                                Text="Next"
+                                TextColor="#FFFFFF" />
+                        </Grid>
+
+                        <controls:SevenSegmentDisplay
+                            HeightRequest="116"
+                            AnimationDuration="280"
+                            CharacterSpacing="9"
+                            DisplayBackgroundColor="{AppThemeBinding Light=#1A090B, Dark=#120808}"
+                            GlowColor="{AppThemeBinding Light=#FB5061, Dark=#FF5C6B}"
+                            GlowIntensity="{AppThemeBinding Light=0.44, Dark=0.66}"
+                            InactiveSegmentColor="{AppThemeBinding Light=#79303A, Dark=#64262F}"
+                            InactiveSegmentOpacity="{AppThemeBinding Light=0.34, Dark=0.3}"
+                            SegmentColor="{AppThemeBinding Light=#FB5D6C, Dark=#FF5C6B}"
+                            SegmentCornerRadius="4"
+                            SegmentThickness="12"
+                            Text="{Binding StatusText}" />
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

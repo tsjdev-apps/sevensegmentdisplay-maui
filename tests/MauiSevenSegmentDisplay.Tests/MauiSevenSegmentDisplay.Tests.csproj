@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\MauiSevenSegmentDisplay\Controls\SegmentCharacterMap.cs" Link="Controls\SegmentCharacterMap.cs" />
+    <Compile Include="..\..\src\MauiSevenSegmentDisplay\Controls\SevenSegmentOptions.cs" Link="Controls\SevenSegmentOptions.cs" />
+    <Compile Include="..\..\src\MauiSevenSegmentDisplay\Controls\SevenSegmentParts.cs" Link="Controls\SevenSegmentParts.cs" />
+  </ItemGroup>
+
+</Project>
