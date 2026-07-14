@@ -88,3 +88,9 @@ The NUnit test project lives in `tests/MauiSevenSegmentDisplay.Tests`. It verifi
     IsAnimationEnabled="True"
     AnimationDuration="250" />
 ```
+
+## Read the Article
+
+For a detailed walkthrough of the control’s architecture, seven-segment geometry, SkiaSharp rendering, bindable properties, animations, and demo application, read the accompanying Medium article:
+
+[Building a Seven-Segment Display Control with .NET MAUI and SkiaSharp](https://medium.com/@tsjdevapps/building-a-seven-segment-display-control-with-net-maui-and-skiasharp-739adf1ca8d9)
